@@ -1,0 +1,31 @@
+server:
+  port: 0
+
+# point to the realm created in key-cloak
+# we can use the issuer-uri or/and the jwk-set-uri
+base:
+  config:
+    url: http://localhost:8180/auth/realms/appsdeveloperblog
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          #issuer-uri: ${base.config.url}
+          jwk-set-uri: ${base.config.url}/protocol/openid-connect/certs
+
+
+
+  application:
+    name: demo-resource-server
+
+# registering with eureka server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${instanceId:${random.value}}
+
+# this generates a unique id

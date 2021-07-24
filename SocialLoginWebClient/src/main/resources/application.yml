@@ -1,0 +1,40 @@
+server:
+  port: 65300
+
+
+
+#  standard use for github, facebook, google and twitter: login/oauth2/code  ***
+#  All the settings have been preconfigured for big companies like google, facebook, github
+#  so we only provide the below
+#  Every Authorization Server That supports OpenId Connect provides  http://{base-server-url}/.well-known/openid-configuration
+#  todo info :: if end session is supported, then we should see end_session_endpoint
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+
+          # https://console.developers.google.com/  ::: create then got to APIs & services/ credentials, URI:-> http://localhost:65300/login/oauth2/code/google
+          #google:
+          #  client-id: xxxxxxxx.apps.googleusercontent.com
+          #  client-secret: xxxxxxxxx
+
+          # https://developers.facebook.com/
+          #facebook:
+          #  client-id: xxxxxxxx
+          #  client-secret: xxxxxxxx
+
+          #github:
+          #  client-id :
+          #  client-secret:
+
+          # http://localhost:65300/login/oauth2/code/okta ::: scoe and provider.okta.issuer-url is mandatory. note dev-xxxxx.okta.com
+          # username: xxxx  pass:xxxxxx
+          okta:
+            client-id: xxxxxxxx
+            client-secret: xxxxxxxx
+            scope: openid,profile
+        provider:
+          okta:
+            issuer-uri: https://dev-xxxxxx.okta.com/oauth2/default

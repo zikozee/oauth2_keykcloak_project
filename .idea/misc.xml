@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Photos-Resource-Server-Photos-Resource-Server-Before-Eureka-Client/pom.xml" />
+        <option value="$PROJECT_DIR$/ResourceServer/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/DiscoveryService/pom.xml" />
+        <option value="$PROJECT_DIR$/Albums-Resource-Server-Albums-Resource-Server-Before-Eureka-Client/pom.xml" />
+        <option value="$PROJECT_DIR$/albums/pom.xml" />
+        <option value="$PROJECT_DIR$/photos/pom.xml" />
+        <option value="$PROJECT_DIR$/PhotoAppWebClient/pom.xml" />
+        <option value="$PROJECT_DIR$/SocialLoginWebClient/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="true" project-jdk-name="12" project-jdk-type="JavaSDK" />
+</project>

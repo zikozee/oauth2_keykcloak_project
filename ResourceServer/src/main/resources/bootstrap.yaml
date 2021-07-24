@@ -1,0 +1,4 @@
+# Spring is ignoring as there is no Spring cloud server added. hence added property to application.yml
+#spring:
+#  application:
+#    name: demo-resource-server

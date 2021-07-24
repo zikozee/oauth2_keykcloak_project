@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: discoveryservice
+
+# if this is missing, bootstrap application name will not be loaded
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri:

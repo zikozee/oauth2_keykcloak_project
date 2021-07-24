@@ -1,0 +1,44 @@
+server:
+  port: 8087
+
+
+# the base config is spring.security.oauth.client.registration
+# mywebclient is the registration id for this client, other clients will have different names
+# todo info: Open Id config  :: http://localhost:8180/auth/realms/appsdeveloperblog/.well-known/openid-configuration
+# todo info : hence this name is unique and must be appended to the redirect-uri
+
+# base url : http://localhost:8087
+base:
+  url: http://localhost:${server.port}
+
+# key cloak authentication server connectivity
+# http://localhost:8180/auth/realms/appsdeveloperblog/protocol/open-id-connect
+keycloak:
+  base:
+    url: http://localhost:8180
+  uri: auth/realms/appsdeveloperblog/protocol/openid-connect
+
+#  standard use for github, facebook, google and twitter: login/oauth2/code
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          mywebclient:
+            client-id: photo-app-webclient
+            client-secret: 8e86a2b9-786d-426a-9502-79819932174f
+            scope: openid, profile, roles
+            authorization-grant-type: authorization_code
+            redirect-uri: ${base.url}/login/oauth2/code/mywebclient
+
+#OAUTH2 CONFIGURATION
+        provider:
+          mywebclient:
+            authorization-uri: ${keycloak.base.url}/${keycloak.uri}/auth
+            token-uri: ${keycloak.base.url}/${keycloak.uri}/token
+            jwk-set-uri: ${keycloak.base.url}/${keycloak.uri}/certs
+            user-info-uri: ${keycloak.base.url}/${keycloak.uri}/userinfo
+            user-name-attribute: preferred_username
+
+
