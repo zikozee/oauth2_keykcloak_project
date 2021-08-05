@@ -1,21 +1,9 @@
 
-H
-DiscoveryService/pom.xml,1\a\1a9d5f7fe6679e31d9a0bb76290ede8925642ab4
-ó
-gResourceServer/src/main/java/com/appsdeveloperblog/ws/api/resourceserver/ResourceServerApplication.java,d\c\dc0a08c9172b83720126dca67224ab02508b5c87
-ù
-mResourceServer/src/main/java/com/appsdeveloperblog/ws/api/resourceserver/controllers/FlaskTestController.java,f\8\f8ec4f90382d9d1edaf95cfd2ad378609ad8d222
-I
-PhotoAppWebClient/HELP.md,b\7\b7b4fdad3d980b643e8d6fb0e77ddd3084e31ca0
-ä
-Zalbums/src/main/java/com/appsdeveloperblog/ws/api/albums/controllers/AlbumsController.java,f\1\f1774dc3833b470ea5afc8d8154f9ebbe9683f45
-
-Ophotos/src/main/java/com/appsdeveloperblog/ws/api/photos/PhotosApplication.java,a\e\ae1526d5af253d22d5078b99e7719974848a3347
-ö
-jPhotoAppWebClient/src/main/java/com/appsdeveloperblog/ws/clients/photoappwebclient/response/AlbumRest.java,8\7\872a349c5c67f934a74404605ee7f1ca26a6281f
->
-photos/pom.xml,5\2\526c5619a90656df84d304e89e85e144ceb285cc
-ô
-iResourceServer/src/main/java/com/appsdeveloperblog/ws/api/resourceserver/controllers/TokenController.java,4\8\48d80bbdbf667a799aedbc2335890a32ea31292f
-ô
-iResourceServer/src/main/java/com/appsdeveloperblog/ws/api/resourceserver/controllers/UsersController.java,0\2\02ed6adaf5b8b2f0ec07339acba0eadef19353e2
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+D
+pcke-example/HELP.md,3\2\32bbed864e4abc5bbe528e0eecde2830e9401ffc
+Å
+Qgateway/src/main/java/com/appdeveloperblog/ws/api/gateway/GatewayApplication.java,7\f\7ffe1cebedf3fd727a74068b19f6de0562946e75
+Ç
+Rpcke-example/src/main/java/com/appsdeveloperblog/oauth/PckeExampleApplication.java,4\e\4ed3db625933f473ec5ba7e34538268b5517e908

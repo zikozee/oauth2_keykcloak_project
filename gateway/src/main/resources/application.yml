@@ -1,9 +1,18 @@
 server:
   port: 8082
 
+
+
 spring:
   cloud:
     gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
       routes[0]:
         id: users-status-check
         uri: lb://demo-resource-server
@@ -39,3 +48,5 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+
+

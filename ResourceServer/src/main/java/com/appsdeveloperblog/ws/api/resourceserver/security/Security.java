@@ -8,6 +8,12 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -26,7 +32,7 @@ public class Security extends WebSecurityConfigurerAdapter {
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(new KeycloakRoleConverter());
 
-        http
+        http//.cors().and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/users/status/check")
 //                .hasAuthority("SCOPE_profile") // if scope does not include profile
@@ -48,4 +54,18 @@ public class Security extends WebSecurityConfigurerAdapter {
         // KeycloakConverter class was added
         // JwtAuthenticationConverter initialized and .jwtAuthenticationConverter(jwtAuthenticationConverter);
     }
+
+
+    // configure only in one place ::: API GATEWAY, if set in both, an error is thrown
+//    @Bean
+//    CorsConfigurationSource corsConfigurationSource(){
+//        CorsConfiguration corsConfiguration = new CorsConfiguration();
+//        corsConfiguration.setAllowedOrigins(List.of("*"));
+//        corsConfiguration.setAllowedMethods(List.of("GET", "POST")); // "*"  for all HttpMethods
+//        corsConfiguration.setAllowedHeaders(List.of("*"));
+//
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", corsConfiguration);// /** allows all root and sub root resource paths
+//        return source;
+//    }
 }
