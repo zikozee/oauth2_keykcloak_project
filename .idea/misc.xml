@@ -7,11 +7,14 @@
         <option value="$PROJECT_DIR$/albums/pom.xml" />
         <option value="$PROJECT_DIR$/photos/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/pcke-example/pom.xml" />
         <option value="$PROJECT_DIR$/ResourceServer/pom.xml" />
         <option value="$PROJECT_DIR$/DiscoveryService/pom.xml" />
         <option value="$PROJECT_DIR$/PhotoAppWebClient/pom.xml" />
         <option value="$PROJECT_DIR$/SocialLoginWebClient/pom.xml" />
-        <option value="$PROJECT_DIR$/pcke-example/pom.xml" />
+        <option value="$PROJECT_DIR$/RemoteUserStoraeProvider/pom.xml" />
+        <option value="$PROJECT_DIR$/LegacyUsersWebService-main/pom.xml" />
+        <option value="$PROJECT_DIR$/legacyusersservice/pom.xml" />
       </list>
     </option>
   </component>
