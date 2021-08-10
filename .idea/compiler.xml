@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="RemoteUserStoraeProvider" />
         <module name="albums" />
         <module name="SocialLoginWebClient" />
         <module name="PhotoAppWebClient" />
@@ -17,6 +16,12 @@
         <module name="photos" />
         <module name="gateway" />
         <module name="pcke-example" />
+      </profile>
+      <profile name="Annotation profile for RemoteUserStoraeProvider" enabled="true">
+        <sourceOutputDir name="../RemoteUserStoraeProvider/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../RemoteUserStoraeProvider/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="RemoteUserStoraeProvider" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

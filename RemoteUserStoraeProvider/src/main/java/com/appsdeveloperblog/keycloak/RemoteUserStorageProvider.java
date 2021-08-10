@@ -7,6 +7,7 @@ import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.RealmModel;
 import org.keycloak.models.UserModel;
 import org.keycloak.storage.UserStorageProvider;
+import org.keycloak.storage.adapter.AbstractUserAdapter;
 import org.keycloak.storage.user.UserLookupProvider;
 
 /**
@@ -18,9 +19,12 @@ public class RemoteUserStorageProvider implements UserStorageProvider, UserLooku
 
     private KeycloakSession keycloakSession;
     private ComponentModel componentModel;
-    public RemoteUserStorageProvider(KeycloakSession keycloakSession, ComponentModel componentModel) {
+    private UserApiService userApiService;
+
+    public RemoteUserStorageProvider(KeycloakSession keycloakSession, ComponentModel componentModel, UserApiService userApiService) {
         this.keycloakSession = keycloakSession;
         this.componentModel = componentModel;
+        this.userApiService = userApiService;
     }
 
     @Override
@@ -35,8 +39,25 @@ public class RemoteUserStorageProvider implements UserStorageProvider, UserLooku
     }
 
     @Override
-    public UserModel getUserByUsername(String s, RealmModel realmModel) {
-        return null;
+    public UserModel getUserByUsername(String username, RealmModel realmModel) {
+
+        UserModel returnedValue = null;
+        User user = userApiService.getUserDetails(username);
+
+        if(user!=null){
+            returnedValue = createUserModel(username, realmModel);
+        }
+
+        return returnedValue;
+    }
+
+    private UserModel createUserModel(String username, RealmModel realmModel){
+        return new AbstractUserAdapter(keycloakSession, realmModel, componentModel) {
+            @Override
+            public String getUsername() {
+                return username;
+            }
+        };
     }
 
     @Override
