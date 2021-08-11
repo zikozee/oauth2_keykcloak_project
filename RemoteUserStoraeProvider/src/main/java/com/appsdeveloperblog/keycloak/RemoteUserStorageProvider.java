@@ -3,9 +3,11 @@ package com.appsdeveloperblog.keycloak;
 import org.keycloak.component.ComponentModel;
 import org.keycloak.credential.CredentialInput;
 import org.keycloak.credential.CredentialInputValidator;
+import org.keycloak.credential.UserCredentialStore;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.RealmModel;
 import org.keycloak.models.UserModel;
+import org.keycloak.models.credential.PasswordCredentialModel;
 import org.keycloak.storage.UserStorageProvider;
 import org.keycloak.storage.adapter.AbstractUserAdapter;
 import org.keycloak.storage.user.UserLookupProvider;
@@ -66,17 +68,25 @@ public class RemoteUserStorageProvider implements UserStorageProvider, UserLooku
     }
 
     @Override
-    public boolean supportsCredentialType(String s) {
-        return false;
+    public boolean supportsCredentialType(String credentialType) {
+        return PasswordCredentialModel.TYPE.equals(credentialType);
     }
 
     @Override
-    public boolean isConfiguredFor(RealmModel realmModel, UserModel userModel, String s) {
-        return false;
+    public boolean isConfiguredFor(RealmModel realmModel, UserModel userModel, String credentialType) {
+        if(!supportsCredentialType(credentialType)) return false;
+        return !getCredentialsStore().getStoredCredentialsByType(realmModel, userModel, credentialType).isEmpty();
+    }
+
+    private UserCredentialStore getCredentialsStore(){
+        return keycloakSession.userCredentialManager();
     }
 
     @Override
     public boolean isValid(RealmModel realmModel, UserModel userModel, CredentialInput credentialInput) {
-        return false;
+        VerifyPasswordResponse verifyPasswordResponse = userApiService.verifyPassword(userModel.getUsername(), credentialInput.getChallengeResponse());
+
+        if(verifyPasswordResponse == null) return false;
+        return verifyPasswordResponse.getResult();
     }
 }
