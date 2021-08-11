@@ -84,6 +84,7 @@ public class RemoteUserStorageProvider implements UserStorageProvider, UserLooku
 
     @Override
     public boolean isValid(RealmModel realmModel, UserModel userModel, CredentialInput credentialInput) {
+        System.out.println("username: " + userModel.getUsername() == null);
         VerifyPasswordResponse verifyPasswordResponse = userApiService.verifyPassword(userModel.getUsername(), credentialInput.getChallengeResponse());
 
         if(verifyPasswordResponse == null) return false;

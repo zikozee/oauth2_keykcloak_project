@@ -1,4 +1,4 @@
-package com.appsdeveloperblog.keycloak;
+package com.appsdeveloperblog.legacyservice.response;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,10 +13,7 @@ package com.appsdeveloperblog.keycloak;
  */
 public class VerifyPasswordResponse {
     private boolean result;
-
-    public VerifyPasswordResponse() {
-    }
-
+ 
     public VerifyPasswordResponse(boolean result) {
 		this.result = result;
 	}

@@ -2,14 +2,16 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="RemoteUserStoraeProvider" />
         <module name="albums" />
         <module name="SocialLoginWebClient" />
         <module name="PhotoAppWebClient" />
-        <module name="legacyusersservice" />
+        <module name="legacyService" />
         <module name="DiscoveryService" />
         <module name="ResourceServer" />
         <module name="demo" />
@@ -17,18 +19,13 @@
         <module name="gateway" />
         <module name="pcke-example" />
       </profile>
-      <profile name="Annotation profile for RemoteUserStoraeProvider" enabled="true">
-        <sourceOutputDir name="../RemoteUserStoraeProvider/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../RemoteUserStoraeProvider/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="RemoteUserStoraeProvider" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="albums" target="11" />
       <module name="demo" target="11" />
       <module name="DiscoveryService" target="11" />
       <module name="gateway" target="11" />
+      <module name="legacyService" target="11" />
       <module name="legacyusersservice" target="11" />
       <module name="pcke-example" target="11" />
       <module name="PhotoAppWebClient" target="11" />
@@ -48,6 +45,7 @@
       <module name="albums" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="legacyService" options="-parameters" />
       <module name="legacyusersservice" options="-parameters" />
       <module name="pcke-example" options="-parameters" />
       <module name="photos" options="-parameters" />

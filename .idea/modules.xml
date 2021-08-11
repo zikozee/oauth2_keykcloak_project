@@ -10,7 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/albums/albums.iml" filepath="$PROJECT_DIR$/albums/albums.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LegacyUsersWebService-main/legacyusersservice.iml" filepath="$PROJECT_DIR$/LegacyUsersWebService-main/legacyusersservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legacyService/legacyService.iml" filepath="$PROJECT_DIR$/legacyService/legacyService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/oauth_project.iml" filepath="$PROJECT_DIR$/.idea/oauth_project.iml" />
       <module fileurl="file://$PROJECT_DIR$/pcke-example/pcke-example.iml" filepath="$PROJECT_DIR$/pcke-example/pcke-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/photos/photos.iml" filepath="$PROJECT_DIR$/photos/photos.iml" />
